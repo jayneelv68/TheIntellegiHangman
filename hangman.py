@@ -39,22 +39,24 @@ def hangman(word):
             
         print(word1)
         guess=input("Make your guess").upper()
-        if guess not in guesses and guess not in  ["A","E","I","O","U"] and len(guess)==1:
-            hit=0
+        hit=0
+        if guess not in guesses and guess not in  ["A","E","I","O","U"] and len(guess)==1 and guess.isalpha():
+            
             for x in range(0,len(word1)):
                 if word[x]==guess:
                     word1[x]=guess
-                    print("Hit")
                     hit=1
-                    corr=corr+1
-            if hit==0:
-                wrongno+=1
-                print("Nope,not there")
-                    
+            
+                
             trialno=trialno+1
-            guesses.append(guess)        
+            guesses.append(guess)
+            corr=corr+1
+            print("Hit")
+        
         else:
-            if len(guess)!=1:
+            if guess.isalpha()==False:
+                print("Abeh, character dheela hai")
+            elif len(guess)!=1:
                 print("Enter a valid English Consonant")
             elif guess in ["A","E","I","O","U"]:
                 print("Vowels kyu dal raha hai bey!")
@@ -62,6 +64,11 @@ def hangman(word):
                 print("You have already tried that! why give off a  try!")
         if "_" not in word1:
                     solved=1
+    if hit==0:
+        wrongno+=1
+        print("Nope,not there")
+    else:
+        print("Hit")
         
     if solved==1:
         print("Yeaaay, solved! You cracked the word:"+word) 

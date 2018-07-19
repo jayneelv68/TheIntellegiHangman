@@ -10,7 +10,7 @@ from beforegame import getword
 #take word randomly from database
 word,ngames,nsolved,nmoves,nhits,diff,z=getword()
 
-print(word)
+
 #Database Schema: Word Noofgames Noofsolved Noofmoveswhensolved difficulty
 
 """TRAINGING"""
@@ -23,6 +23,7 @@ ntrials,corr,solved=hangman(word)
 print(solved)
 #resolving parameters
 nhits+=corr
+#difficulty update
 diff=(diff*ngames+corr/ntrials)/(ngames+1)
 print(diff)
 ngames+=1
