@@ -99,7 +99,7 @@ def play(userid):
     userscore=0
     for x in file:
         user=x.split(":")
-        print(user)
+        #print(user)
         if int(float(user[0]))==userid:
             strrep=x
             ngamees=int(float(user[1]))
