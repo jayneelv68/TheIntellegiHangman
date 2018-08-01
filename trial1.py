@@ -83,7 +83,7 @@ def main():
         userid=int(float(input("Please enter your user id.")))
         play(userid)
     else:
-        print("would you like to register?")
+        print("would you like to register(yes/no)?")
         y=input().lower()
         if y=="yes":
             userid=register()
