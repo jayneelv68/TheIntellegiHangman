@@ -156,7 +156,7 @@ def play(userid):
     f.write(s)
     f.close()
     
-    stri=str(userid)+":"+str(ngamees)+":"+str(userlevel)+":"+str(userscore)+":"+username+":"
+    stri=str(userid)+":"+str(ngamees+1)+":"+str(userlevel)+":"+str(userscore)+":"+username+":"
     s = open("user.txt").read()
     s = s.replace(strrep,stri)
     f = open("user.txt", 'w')
